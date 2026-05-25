@@ -1,0 +1,620 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f7f5ee;
+  color: #1f2a24;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 6vw;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid #e5e0d3;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #2f7a4f;
+}
+
+.header p {
+  margin: 4px 0 0;
+  color: #637267;
+}
+
+.header nav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.header nav button,
+.secondaryButton {
+  border: 1px solid #d8d0c0;
+  background: #fff;
+  color: #344237;
+  border-radius: 14px;
+  padding: 10px 14px;
+}
+
+/* Login / Signup */
+.centerPage {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+.signupBackground {
+  background: radial-gradient(circle at top, #fff1e7 0%, #f7f5ee 42%, #eef7ee 100%);
+}
+
+.loginCard {
+  width: min(460px, 100%);
+  background: #fff;
+  border: 1px solid #e5e0d3;
+  border-radius: 28px;
+  padding: 34px;
+  box-shadow: 0 24px 60px rgba(50, 62, 47, 0.12);
+  transition: 0.2s ease;
+}
+
+.signupFocusCard {
+  border: 2px solid #f2a65a;
+  box-shadow:
+    0 0 0 6px rgba(242, 166, 90, 0.18),
+    0 24px 60px rgba(50, 62, 47, 0.12);
+}
+
+.signupCard {
+  border: 2px solid #f2a65a;
+  box-shadow:
+    0 0 0 8px rgba(242, 166, 90, 0.16),
+    0 24px 60px rgba(50, 62, 47, 0.12);
+}
+
+.loginCard h2,
+.hero h2,
+.detailHero h2 {
+  margin: 14px 0 10px;
+  font-size: clamp(28px, 5vw, 44px);
+  line-height: 1.1;
+}
+
+.loginCard p,
+.hero p,
+.detailHero p,
+.subText {
+  color: #657268;
+  line-height: 1.6;
+}
+
+.loginForm,
+.fridgeForm {
+  display: grid;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.noticeBox {
+  margin: 18px 0;
+  padding: 13px 14px;
+  border-radius: 14px;
+  background: #eaf6ec;
+  color: #2f7a4f;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.noticeBox.warning {
+  background: #fff1e7;
+  color: #a24b12;
+  border: 1px solid #ffc88f;
+}
+
+.textButton {
+  margin-top: 16px;
+  border: 0;
+  background: transparent;
+  color: #2f7a4f;
+  font-weight: 900;
+  text-decoration: underline;
+}
+
+.highlightSignupButton {
+  width: 100%;
+  border-radius: 14px;
+  padding: 13px 18px;
+  background: #f2a65a;
+  color: #4d2500;
+  text-decoration: none;
+  animation: pulseSignup 1.2s infinite;
+}
+
+.warningBadge {
+  background: #fff1e7 !important;
+  color: #a24b12 !important;
+}
+
+@keyframes pulseSignup {
+  0% {
+    box-shadow: 0 0 0 0 rgba(242, 166, 90, 0.55);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(242, 166, 90, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(242, 166, 90, 0);
+  }
+}
+
+/* Form */
+label {
+  display: grid;
+  gap: 8px;
+  font-weight: 700;
+}
+
+input {
+  border: 1px solid #d8d0c0;
+  border-radius: 14px;
+  padding: 13px 14px;
+  outline: none;
+  background: #fff;
+}
+
+input:focus {
+  border-color: #2f7a4f;
+  box-shadow: 0 0 0 4px rgba(47, 122, 79, 0.12);
+}
+
+/* Buttons */
+.primaryButton {
+  border: 0;
+  background: #2f7a4f;
+  color: #fff;
+  border-radius: 14px;
+  padding: 13px 18px;
+  font-weight: 800;
+  box-shadow: 0 10px 24px rgba(47, 122, 79, 0.2);
+}
+
+.signupPrimaryButton {
+  background: #d96b1c;
+  box-shadow: 0 10px 24px rgba(217, 107, 28, 0.24);
+}
+
+.allergyButton {
+  border: 0;
+  background: #d96b1c;
+  color: #fff;
+  border-radius: 14px;
+  padding: 13px 18px;
+  font-weight: 800;
+  box-shadow: 0 10px 24px rgba(217, 107, 28, 0.18);
+}
+
+.primaryButton:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.fullWidth {
+  width: 100%;
+  margin-top: 16px;
+}
+
+/* Layout */
+.page {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  padding: 34px 20px 70px;
+  display: grid;
+  gap: 22px;
+}
+
+.hero,
+.detailHero {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  background: linear-gradient(135deg, #fff 0%, #edf7ec 100%);
+  border: 1px solid #e1e8d9;
+  border-radius: 30px;
+  padding: 34px;
+  box-shadow: 0 16px 44px rgba(50, 62, 47, 0.08);
+}
+
+.badge,
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border-radius: 999px;
+  padding: 7px 11px;
+  background: #e6f2e8;
+  color: #2f7a4f;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid #e5e0d3;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 10px 32px rgba(50, 62, 47, 0.06);
+}
+
+.panel h2,
+.panel h3 {
+  margin-top: 0;
+}
+
+/* Chips */
+.chipGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.chip {
+  border: 1px solid #d8d0c0;
+  background: #fff;
+  color: #344237;
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-weight: 700;
+}
+
+.chip.active {
+  background: #2f7a4f;
+  color: #fff;
+  border-color: #2f7a4f;
+}
+
+.staticChip {
+  cursor: default;
+  background: #f7f5ee;
+}
+
+.ownedChip {
+  background: #eaf6ec;
+  border-color: #bbdec3;
+  color: #2f7a4f;
+}
+
+.missingChip {
+  background: #fff1e7;
+  border-color: #ffd1a8;
+  color: #a24b12;
+}
+
+.successChip {
+  background: #eaf6ec;
+  border-color: #bbdec3;
+  color: #2f7a4f;
+}
+
+.allergyChip {
+  cursor: default;
+  background: #fff1e7;
+  border-color: #ffc88f;
+  color: #a24b12;
+}
+
+/* Similar Suggestions */
+.suggestionBox {
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 16px;
+  background: #f7f5ee;
+  border: 1px dashed #d8d0c0;
+  display: grid;
+  gap: 10px;
+}
+
+.suggestionBox strong {
+  font-size: 14px;
+  color: #445348;
+}
+
+.suggestionChipRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.suggestionChip {
+  border: 1px solid #cbd8c7;
+  background: #fff;
+  color: #2f7a4f;
+  border-radius: 999px;
+  padding: 8px 11px;
+  font-weight: 800;
+}
+
+.suggestionChip:hover {
+  background: #eaf6ec;
+}
+
+/* Fridge */
+.actionRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+
+.hint,
+.emptyText {
+  color: #8a7662;
+}
+
+.fridgePanel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.fridgeForm {
+  grid-template-columns: 1fr auto;
+  align-items: end;
+}
+
+.fridgeManageGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.allergyPanel {
+  border-color: #ffd1a8;
+  background: #fffaf5;
+}
+
+.allergySummaryPanel {
+  border-color: #ffd1a8;
+  background: #fffaf5;
+}
+
+.allergyNoticeText {
+  margin: 8px 0 0;
+  color: #a24b12;
+  font-weight: 800;
+}
+
+.ingredientList {
+  display: grid;
+  gap: 12px;
+}
+
+.ingredientItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid #eee6d8;
+  border-radius: 18px;
+  padding: 14px;
+  background: #fffdf8;
+}
+
+.ingredientItem div {
+  display: grid;
+  gap: 4px;
+}
+
+.ingredientItem span {
+  color: #657268;
+  font-size: 14px;
+}
+
+.ingredientItem button {
+  border: 0;
+  border-radius: 12px;
+  padding: 9px 12px;
+  background: #f3e3d8;
+  color: #964113;
+  font-weight: 700;
+}
+
+.allergyItem {
+  border-color: #ffd1a8;
+  background: #fff7ee;
+}
+
+/* Recipes */
+.recipeGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.recipeCard {
+  border: 1px solid #e7dfcf;
+  background: #fffdf8;
+  border-radius: 22px;
+  padding: 20px;
+  display: grid;
+  gap: 14px;
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.score {
+  font-weight: 900;
+  color: #2f7a4f;
+}
+
+.recipeCard h4 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.matchBlock {
+  display: grid;
+  gap: 8px;
+}
+
+.matchLabel {
+  display: flex;
+  justify-content: space-between;
+  color: #445348;
+}
+
+.barTrack {
+  height: 10px;
+  border-radius: 999px;
+  background: #ece8de;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #6bbf7b, #2f7a4f);
+}
+
+.summaryBlock {
+  display: grid;
+  gap: 8px;
+}
+
+.miniChipRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.miniChip {
+  border-radius: 999px;
+  padding: 6px 9px;
+  font-size: 13px;
+  font-weight: 800;
+  background: #f2efe6;
+  color: #344237;
+}
+
+.miniChip.owned {
+  background: #eaf6ec;
+  color: #2f7a4f;
+}
+
+.miniChip.missing {
+  background: #fff1e7;
+  color: #a24b12;
+}
+
+.miniChip.muted {
+  color: #7a7f77;
+}
+
+/* Detail */
+.detailHero {
+  display: grid;
+}
+
+.detailGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.stepList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.stepList li {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.stepList span {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #2f7a4f;
+  color: #fff;
+  font-weight: 900;
+}
+
+.stepList p {
+  margin: 5px 0 0;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .header,
+  .hero,
+  .fridgePanel {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .fridgeForm,
+  .recipeGrid,
+  .detailGrid,
+  .fridgeManageGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .page {
+    padding: 22px 14px 50px;
+  }
+
+  .hero,
+  .panel,
+  .detailHero {
+    padding: 20px;
+    border-radius: 22px;
+  }
+}
